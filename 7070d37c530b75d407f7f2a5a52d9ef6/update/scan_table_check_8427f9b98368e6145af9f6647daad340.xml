@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <category>manageability</category>
+        <conditions table="report_stats">sys_updated_onRELATIVELT@month@ago@3<item endquery="false" field="sys_updated_on" goto="false" newquery="false" operator="RELATIVE" or="false" value="LT@month@ago@3"/>
+        </conditions>
+        <description/>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>Reports not run for 3 months</name>
+        <priority>4</priority>
+        <resolution_details>Old reports that are no longer being run regularly should be removed in order to keep a manageable number of reports. Check if the report(s) linked to this fnding haven't been run in the last 3 months and if so, work with the report owner to decide if the report should be retired.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+    // Add your code here
+
+})(engine);]]></script>
+        <short_description>Reports not run for 3 months</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 12:31:13</sys_created_on>
+        <sys_id>8427f9b98368e6145af9f6647daad340</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reports not run for 3 months</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_8427f9b98368e6145af9f6647daad340</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 12:31:13</sys_updated_on>
+        <table>report_stats</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+</record_update>

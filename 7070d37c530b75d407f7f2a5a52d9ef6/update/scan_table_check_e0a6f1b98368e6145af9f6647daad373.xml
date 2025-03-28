@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <category>manageability</category>
+        <conditions table="sys_script">when=before^active=true^scriptLIKEinsert()^ORscriptLIKEupdate()<item display_value="before" endquery="false" field="when" goto="false" newquery="false" operator="=" or="false" value="before"/>
+            <item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="false" field="script" goto="false" newquery="false" operator="LIKE" or="false" value="insert()"/>
+            <item endquery="false" field="script" goto="false" newquery="false" operator="LIKE" or="true" value="update()"/>
+        </conditions>
+        <description/>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>Before Business Rules should not  update() or insert() records on other  tables</name>
+        <priority>3</priority>
+        <resolution_details>Running an insert() or update() in a onBefore Business Rule will cause updates to other tables, even though the update may be cancelled. To ensure data integrity, change this business rule to run "after".</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+    // Add your code here
+
+})(engine);]]></script>
+        <short_description>Before Business Rules should not  update() or insert() records on other  tables</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 12:30:51</sys_created_on>
+        <sys_id>e0a6f1b98368e6145af9f6647daad373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Before Business Rules should not  update() or insert() records on other  tables</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_e0a6f1b98368e6145af9f6647daad373</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 12:30:51</sys_updated_on>
+        <table>sys_script</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+</record_update>
