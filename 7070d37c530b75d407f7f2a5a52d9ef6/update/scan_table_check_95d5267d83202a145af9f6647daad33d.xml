@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>manageability</category>
+        <conditions table="sys_report">user!=GLOBAL^user!=group<item endquery="false" field="user" goto="false" newquery="false" operator="!=" or="false" value="GLOBAL"/>
+            <item endquery="false" field="user" goto="false" newquery="false" operator="!=" or="false" value="group"/>
+        </conditions>
+        <description>Reports created by individuals and not shared with others will become stagnant with time. </description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>Report owned by inactive user</name>
+        <priority>2</priority>
+        <resolution_details>Consider updating who the report is shared with or removing the report entirely</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function(finding, current) {
+    var grUser = new GlideRecord('sys_user');
+    grUser.get(current.user);
+    if (!grUser.active){
+		finding.setCurrentSource(current);
+        finding.increment();
+	}
+})(finding, current);]]></script>
+        <short_description>Report owned by inactive user</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 15:55:17</sys_created_on>
+        <sys_id>95d5267d83202a145af9f6647daad33d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Report owned by inactive user</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_95d5267d83202a145af9f6647daad33d</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 15:59:44</sys_updated_on>
+        <table>sys_report</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>95d5267d83202a145af9f6647daad33d</id>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 15:56:02</sys_created_on>
+        <sys_id>1c062ef983202a145af9f6647daad3da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 15:56:02</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <category>manageability</category>
+        <conditions table="sys_user_group">active=true<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+        </conditions>
+        <description>Active groups without membership, and potentially having roles, can result in duplication of groups with similar names or purpose. </description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>Active Group with No Membership</name>
+        <priority>3</priority>
+        <resolution_details>Evaluate groups identified with no group members.  Groups that are redundant should be deactivated. If groups are being created via integration services such as LDAP, then ensure they are necessary and have members.</resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+	var memberCount = new GlideAggregate('sys_user_grmember');
+	memberCount.addQuery('group', engine.current.sys_id);
+	memberCount.query();
+
+	if (!memberCount.hasNext()) {
+		engine.finding.increment();
+	}
+
+})(engine);]]></script>
+        <short_description>Active Group with No Membership</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 17:31:15</sys_created_on>
+        <sys_id>3f2ab63d83e42a145af9f6647daad391</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Active Group with No Membership</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_3f2ab63d83e42a145af9f6647daad391</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 17:38:01</sys_updated_on>
+        <table>sys_user_group</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3f2ab63d83e42a145af9f6647daad391</id>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 17:31:15</sys_created_on>
+        <sys_id>87cbf63983e42a145af9f6647daad31b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 17:31:15</sys_updated_on>
+        <table>scan_table_check</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

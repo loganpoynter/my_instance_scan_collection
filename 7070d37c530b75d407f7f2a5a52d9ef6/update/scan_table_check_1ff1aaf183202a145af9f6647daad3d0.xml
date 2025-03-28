@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <category>manageability</category>
+        <conditions table="sys_report_users_groups">group_idISNOTEMPTY^group_id.sys_idISEMPTY^NQuser_idISNOTEMPTY^user_id.sys_idISEMPTY^NQuser_id.active=false^ORgroup_id.active=false<item endquery="false" field="group_id" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="false" field="group_id.sys_id" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="false" field="user_id" goto="false" newquery="true" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="false" field="user_id.sys_id" goto="false" newquery="false" operator="ISEMPTY" or="false" value=""/>
+            <item endquery="false" field="user_id.active" goto="false" newquery="true" operator="=" or="false" value="false"/>
+            <item endquery="false" field="group_id.active" goto="false" newquery="false" operator="=" or="true" value="false"/>
+        </conditions>
+        <description>In the rare case the system creates a group/user with the same orphan sys_id, the report would otherwise immediately be shared with the group/user.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>Reports Shared with Missing or Inactive Groups/Users</name>
+        <priority>3</priority>
+        <resolution_details>Update the report and share it only with valid groups/users known to the system and which are active. </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+    // Add your code here
+
+})(engine);]]></script>
+        <short_description>Reports Shared with Missing or Inactive Group/User</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 15:46:54</sys_created_on>
+        <sys_id>1ff1aaf183202a145af9f6647daad3d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reports Shared with Missing or Inactive Groups/Users</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_1ff1aaf183202a145af9f6647daad3d0</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 15:46:54</sys_updated_on>
+        <table>sys_report_users_groups</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+</record_update>

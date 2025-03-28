@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="scan_table_check">
+    <scan_table_check action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <category>upgradability</category>
+        <conditions table="sys_transform_script">when=onBefore^scriptLIKEinsert()^ORscriptLIKEupdate()<item display_value="onBefore" endquery="false" field="when" goto="false" newquery="false" operator="=" or="false" value="onBefore"/>
+            <item endquery="false" field="script" goto="false" newquery="false" operator="LIKE" or="false" value="insert()"/>
+            <item endquery="false" field="script" goto="false" newquery="false" operator="LIKE" or="true" value="update()"/>
+        </conditions>
+        <description>Running an insert() or update() in a onBefore Transform Script will cause updates to other tables, even though the transform may be errored. &#13;
+&#13;
+Another impact of creating record other than the target table, is that the import could take a long time. Typically because the BR loging and potential additional logic will be triggered with every update. In addition, it is hard to fnd out from where a record was updated.</description>
+        <documentation_url/>
+        <finding_type>scan_finding</finding_type>
+        <name>onBefore Transform Script using update() or insert()</name>
+        <priority>3</priority>
+        <resolution_details>To ensure data integrity, change this Transform Script to run "after". </resolution_details>
+        <run_condition/>
+        <score_max>100</score_max>
+        <score_min>0</score_min>
+        <score_scale>1</score_scale>
+        <script><![CDATA[(function (engine) {
+
+    // Add your code here
+
+})(engine);]]></script>
+        <short_description>onBefore Transform Script using update() or insert()</short_description>
+        <sys_class_name>scan_table_check</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-03-28 15:22:57</sys_created_on>
+        <sys_id>ff6c5a7183ece6145af9f6647daad3d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>onBefore Transform Script using update() or insert()</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>scan_table_check_ff6c5a7183ece6145af9f6647daad3d2</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-03-28 15:22:57</sys_updated_on>
+        <table>sys_transform_script</table>
+        <use_manifest>false</use_manifest>
+    </scan_table_check>
+</record_update>
