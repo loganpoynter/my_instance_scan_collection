@@ -29,7 +29,8 @@
 		'file_nameISNOTEMPTY'+
 		'^table_nameISNOTEMPTY' +
 		'^table_nameNOT LIKEinvisible.' +
-		'^table_name!=sys_attachment'
+		'^table_name!=sys_attachment' +
+		'^table_name!=entitlement_data'
 	);
 	_grAttachment.query();
 
@@ -65,7 +66,7 @@
 					engine.finding.setValue(
 						'finding_details',
 						'Referenced table: ' + _strTableName
-					);					
+					);			
 				}
 			}
 		}
@@ -76,8 +77,10 @@
 				'finding_details',
 				'Referenced table "' + _strTableName + '" does not exist in that instance!'
 			);
+			
 		}
-	}			
+	}	
+		
 
 })(engine);]]></script>
         <short_description>Orphaned Attachments</short_description>
@@ -85,14 +88,13 @@
         <sys_created_by>maik.skoddow</sys_created_by>
         <sys_created_on>2024-04-27 07:06:35</sys_created_on>
         <sys_id>f9aa5f3193bd86107ab2f55f7bba1080</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Orphaned Attachments</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_script_only_check_f9aa5f3193bd86107ab2f55f7bba1080</sys_update_name>
-        <sys_updated_by>maik.skoddow</sys_updated_by>
-        <sys_updated_on>2024-05-10 04:23:49</sys_updated_on>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-12 17:03:26</sys_updated_on>
     </scan_script_only_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=f9aa5f3193bd86107ab2f55f7bba1080"/>
 </record_update>
