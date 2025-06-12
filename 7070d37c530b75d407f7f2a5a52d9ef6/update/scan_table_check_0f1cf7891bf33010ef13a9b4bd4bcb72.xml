@@ -48,6 +48,7 @@
 		if (_hasActiveField && _grRelatedRecord.get(_strRelatedSysID)) {
 			if (!_grRelatedRecord.active) {
 				engine.finding.increment();
+				new global.Workflow.cancel(engine.current.getValue('sys_id'));
 			}
 		}
 	}
@@ -59,16 +60,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-12 06:22:47</sys_created_on>
         <sys_id>0f1cf7891bf33010ef13a9b4bd4bcb72</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Active Workflow Context Records with inactive related Records</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_table_check_0f1cf7891bf33010ef13a9b4bd4bcb72</sys_update_name>
-        <sys_updated_by>maik.skoddow</sys_updated_by>
-        <sys_updated_on>2024-01-17 06:16:10</sys_updated_on>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-12 19:16:55</sys_updated_on>
         <table>wf_context</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=0f1cf7891bf33010ef13a9b4bd4bcb72"/>
 </record_update>
