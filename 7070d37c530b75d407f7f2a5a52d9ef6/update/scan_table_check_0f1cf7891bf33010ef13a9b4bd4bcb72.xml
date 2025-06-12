@@ -18,57 +18,60 @@
         <score_max>100</score_max>
         <score_min>0</score_min>
         <score_scale>1</score_scale>
-        <script><![CDATA[(function (engine) {
+        <script><![CDATA[(function(engine) {
 
-	var _strRelatedTableName = engine.current.getValue('table');
-	var _strRelatedSysID     = engine.current.getValue('id');
-	var _grDbObject          = new GlideRecord('sys_db_object');
-	var wf = new Workflow();
+    var _strRelatedTableName = engine.current.getValue('table');
+    var _strRelatedSysID = engine.current.getValue('id');
+    var _grDbObject = new GlideRecord('sys_db_object');
+    var wf = new Workflow();
 
-	if (_grDbObject.get('name', _strRelatedTableName)) {
-		var _grRelatedRecord = new GlideRecord(_strRelatedTableName);
+    if (_grDbObject.get('name', _strRelatedTableName)) {
+        var _grRelatedRecord = new GlideRecord(_strRelatedTableName);
 
-		_grRelatedRecord.initialize();
+        _grRelatedRecord.initialize();
 
-		var _hasActiveField = false;
-		var _arrFields      = _grRelatedRecord.getElements();
-		var _intSize        = 0;
+        var _hasActiveField = false;
+        var _arrFields = _grRelatedRecord.getElements();
+        var _intSize = 0;
 
-		if (typeof _arrFields.size === 'function') {
-			_intSize = _arrFields.size();
-		}
+        if (typeof _arrFields.size === 'function') {
+            _intSize = _arrFields.size();
+        }
 
-		for (var _numIndex = 0; _numIndex < _intSize && !_hasActiveField; _numIndex++) {
-			var _objGlideElement = _arrFields.get(_numIndex);
-			var _strFieldName = String(_objGlideElement.getName());
-			var _strFieldType = String(_objGlideElement.getED().getInternalType());
+        for (var _numIndex = 0; _numIndex < _intSize && !_hasActiveField; _numIndex++) {
+            var _objGlideElement = _arrFields.get(_numIndex);
+            var _strFieldName = String(_objGlideElement.getName());
+            var _strFieldType = String(_objGlideElement.getED().getInternalType());
 
-			_hasActiveField = _strFieldName === 'active' && _strFieldType === 'boolean';
-		}
+            _hasActiveField = _strFieldName === 'active' && _strFieldType === 'boolean';
+        }
 
-		if (_hasActiveField && _grRelatedRecord.get(_strRelatedSysID)) {
-			if (!_grRelatedRecord.active) {
-				engine.finding.increment();
-				wf.cancelContext(engine.current);
-			}
-		}
-	}
+        if (_hasActiveField && _grRelatedRecord.get(_strRelatedSysID)) {
+            if (!_grRelatedRecord.active) {
+                engine.finding.increment();
+                engine.finding.setValue(
+                    'finding_details',
+                    _strRelatedTableName
+                );
+                wf.cancelContext(engine.current);
+            }
+        }
+    }
 
-})(engine);
-]]></script>
+})(engine);]]></script>
         <short_description>Active Workflow Context Records with inactive related Records</short_description>
         <sys_class_name>scan_table_check</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-12 06:22:47</sys_created_on>
         <sys_id>0f1cf7891bf33010ef13a9b4bd4bcb72</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>Active Workflow Context Records with inactive related Records</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_table_check_0f1cf7891bf33010ef13a9b4bd4bcb72</sys_update_name>
         <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
-        <sys_updated_on>2025-06-12 19:48:56</sys_updated_on>
+        <sys_updated_on>2025-06-12 20:07:13</sys_updated_on>
         <table>wf_context</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
