@@ -22,12 +22,9 @@
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>global</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description>=======================================================&#13;
-Provided by Maik Skoddow (https://www.linkedin.com/in/maik-skoddow)&#13;
-=======================================================&#13;
-This application contains several hundred hand-picked and completely newly developed instance scan checks for ServiceNow. They focus purely on basic platform and security aspects and are therefore ideal for hardening a freshly provisioned instance. I have also added some additional features to make using Instance Scan Checks more convenient.&#13;
-&#13;
-The Instance Scan feature in ServiceNow can help you find potential issues related to security, upgradability, manageability, user experience, and performance. You can use instance scan to enforce best practice implementations in your development cycle, release management, pre- and post-upgrades.</short_description>
+        <short_description>=======================================================
+Provided by Maik Skoddow (https://www.linkedin.com/in/maik-skoddow)
+=======================================================</short_description>
         <source>7070d37c530b75d407f7f2a5a52d9ef6</source>
         <store_correlation_id/>
         <store_url/>
@@ -37,9 +34,9 @@ The Instance Scan feature in ServiceNow can help you find potential issues relat
         <sys_created_by>maik.skoddow</sys_created_by>
         <sys_created_on>2023-12-09 10:31:04</sys_created_on>
         <sys_id>7070d37c530b75d407f7f2a5a52d9ef6</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_updated_by>maik.skoddow</sys_updated_by>
-        <sys_updated_on>2025-02-22 03:41:02</sys_updated_on>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-12 20:39:39</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
