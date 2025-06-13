@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=398000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Flow to clean up pending approvals for inactive tasks over 6 months old</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>pending_approval_cleanup</internal_name>
+        <label_cache>[{"name":"1b6c7a29-1ed7-45be-a010-4431581ea876.Records","label":"1 - Look Up Records➛Approval Records","reference":"sysapproval_approver","reference_display":"Approval","type":"records","base_type":"records","usedInstances":{"5c0092c9-b861-4af8-9565-28c8e4d67d50":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5c0092c9-b861-4af8-9565-28c8e4d67d50.item","label":"2 - For Each➛Approval Record","reference":"sysapproval_approver","reference_display":"Approval","type":"reference","base_type":"reference","usedInstances":{"44b52183-efbb-46ae-988b-bc51f50e2992":["record"],"97ab4756-e2c8-4265-b7f2-f3c490e29f92":["record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}}]</label_cache>
+        <master_snapshot>6bc472a6470eee5051897652e36d4385</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Pending Approval Cleanup</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>2fc472a6470eee5051897652e36d43d3</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:24:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f2637eee47caee5051897652e36d43a0</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Pending Approval Cleanup</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>sys_hub_flow_f2637eee47caee5051897652e36d43a0</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:55</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f2637eee47caee5051897652e36d43a0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f2637eee47caee5051897652e36d43a0"/>
+    <sys_flow_timer_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <day_of_month>1</day_of_month>
+        <day_of_week/>
+        <name/>
+        <published_version/>
+        <run_period>1970-01-31 00:00:00</run_period>
+        <run_start/>
+        <sys_class_name>sys_flow_timer_trigger</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2fc472a6470eee5051897652e36d43d3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:55</sys_updated_on>
+        <time/>
+        <timer_type>1</timer_type>
+        <trigger_definition/>
+    </sys_flow_timer_trigger>
+    <sys_flow_trigger_auto_script action="delete_multiple" query="name=Trigger:2fc472a6470eee5051897652e36d43d3^sys_idNOT IN27c472a6470eee5051897652e36d43d4"/>
+    <sys_flow_trigger_auto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <max_drift/>
+        <name>Trigger:2fc472a6470eee5051897652e36d43d3</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Logan Poynter">257642b0c3b54ad00bd9d9ec050131fc</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_period>1970-01-31 00:00:00</run_period>
+        <run_start>2025-07-13 14:30:55</run_start>
+        <run_time/>
+        <run_type>periodically</run_type>
+        <script><![CDATA[sn_flow_trigger.FlowTriggerAPI.fireTimerTrigger('2fc472a6470eee5051897652e36d43d3');]]></script>
+        <sys_class_name>sys_flow_trigger_auto_script</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>27c472a6470eee5051897652e36d43d4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:55</sys_updated_on>
+        <time_zone/>
+        <trigger display_value="">2fc472a6470eee5051897652e36d43d3</trigger>
+        <upgrade_safe>true</upgrade_safe>
+    </sys_flow_trigger_auto_script>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f2637eee47caee5051897652e36d43a0"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f2637eee47caee5051897652e36d43a0^sys_idNOT INbe637eee47caee5051897652e36d43a2"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f2637eee47caee5051897652e36d43a0</id>
+        <name>Pending Approval Cleanup</name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:24:15</sys_created_on>
+        <sys_id>be637eee47caee5051897652e36d43a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:24:15</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=be637eee47caee5051897652e36d43a2"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f2637eee47caee5051897652e36d43a0^sys_idNOT IN45e37a62470eee5051897652e36d43ef"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">f2637eee47caee5051897652e36d43a0</flow>
+        <name>Repeat</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:26:20</sys_created_on>
+        <sys_id>45e37a62470eee5051897652e36d43ef</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:18</sys_updated_on>
+        <trigger_definition display_value="Repeat">f63f0d94c32222002841b63b12d3aeed</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/3VSXUvEMBD8K5Lns7TX86tvghz4oIKKLyJlm2zvApsP0/S0iv/dbdo7RLH0JTPZ2Zkhz5+CoEESlbhHjxDFQmgbMVigx8Ej4xvSCmvVB4jaWeYNWAXRhUFUMfS4EG1w5hGNJ4g80AJ1DLqgMIiqyPOF2AH1+DB014r1WMGCGZXDfmPiGSguzvLjvDgui6M8r9LPrNxqUgGtqJ5fFsJD4Ok4an/+ovQoX8iTdqUuVrJc8pfny/NV0ZyWTbFUJWBTsuCfxL/9xH+S/8yE7xGtQnUI/KeWgKDuLA2HG1tudirAwHunP3CWCtgih5A4kYdjrXTHpQ4TLLdOS7zzyUtCIjQ0z0hHvbG3Uw4+K2yhp/g0F8tI37EeB2TPo4vZUvuwdW/3+4VrbVPAmSQngQ4niDHopo/Yjc0joWGh2oD32m5qH9xOp2H2YrJUXdaSe+Olnd7YDORoPOOKIFszfpXgJwh6THHDMjz8ldLXr/24d8oxO66n0HxhLmWtkebn1MmgfbzkBbv9+/t6+QZ9DqNW2gIAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>repeat</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f2637eee47caee5051897652e36d43a0^sys_idNOT IN09e37a62470eee5051897652e36d43f1,dbc472a6470eee5051897652e36d4311"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">f2637eee47caee5051897652e36d43a0</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:26:20</sys_created_on>
+        <sys_id>09e37a62470eee5051897652e36d43f1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:53</sys_updated_on>
+        <ui_id>1b6c7a29-1ed7-45be-a010-4431581ea876</ui_id>
+        <values>H4sIAAAAAAAA/9VX30/bMBD+V6o8bVJUJbQU1jcEQkIaVALEC2OWkzitN9cOttNSEP/7zj+ShrZA6boBb7Xvzvfd3ffZ6fVDQLOgH+zn3SjC8e7+XhR1OlHU63VSHCdJp5cmUdJNgjDgeEzAU+OEEVhOMCvNWs0ULgopYI3cDyLBnFFVMDy78l4H3gUs6YiyTBIe9K9vwqDAEs7VENN/WDDpWUEQwwlhcMClSds6MxjCtSE/CV4uwSSoloi7o4XMDJYoDMidJjwjkCrHTJEwGGOeYS3krN6RBGcDzuYbI8o1nBgY5ztF7+H4/cj45QTKSomz1Uvku+S205GgKRkUmgrudhxQZxSsHPMzV4DpL8lxyXTVX9gpFZxHCoPZgPCI8ouRmJ5XCY8pt+V5IxMpjKRaYa0lTUpNlJkFYWQMB6ExDJXyITLzozYYsIzbQwaLds7EFJIqOuRtnBrgbWgRbh/D/pHdvsKSmipO4RhLjJwymDZyTVeilLYrE5SyUlmDxFy5s4JH2yt0WxqUrmpfH3ItAgeVSlroAwiYEF/KY7gWq3ejOSVSwTNqcqomtTXW5OSMC92S5LYkgC8L618/G8y3xU/IjxLyZBaDsaIUCAKeANZa0l94gh3e/lC1EzKknENvB/l3rHQvOsIz9eXrsnjeDcdmUj1s9nLdOawMXjUcL9one1608dZEC3DfSbZalh9Pta/p0BX8ihjTvRdJsDuftxJSI9e5hhqXdbExQ48pYdmTx2QNcFXwwJCtlcyew+sJmpscC6/Kzqd/VT4kPQFQhly/KWeU20cdgG6Ht9HLl9e3BR7Y8TfeELMHl+0ye3FLi9b95resnWvF3zVAVoEXgKh16VCuAF7dr9XxnrqdrVG3s/M26gJxrh9q9HXXVjS4+nYzo6v8740/XvQHdjUC4sebmvqHm+WM35pzx+Rc0GbnTeJsMstZjp4h2Ja/DJ8RW/gv1T2CUJ8PObGiKc2GRM+zV16Z0FPMfq+ye3bVGrLl/fVXZvdF7fXiuc5AA0gSBaNqfmbG8LERLd8PcRS6/c3uhxOuydC2b12QVeQpvmud1yhXQveXBK1zeFZ3t/gF9j8euNh3fqV+Yt//T/HHalMS3/wBoTwWtAIQAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">f2637eee47caee5051897652e36d43a0</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>5c0092c9-b861-4af8-9565-28c8e4d67d50</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:18</sys_created_on>
+        <sys_id>dbc472a6470eee5051897652e36d4311</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:18</sys_updated_on>
+        <ui_id>97ab4756-e2c8-4265-b7f2-f3c490e29f92</ui_id>
+        <values>H4sIAAAAAAAA/+1UTWvbQBD9K0ZnWawky5V9CxhDD00gLbmkQax2R/bCaqWsVk5c4//eWWnlOJ81wVAKvWlGM/Pem33M7c4T3Jt7E+AknIVTFodxHBESpZMwn8Z5GPGYAoSe7ylaAlZqYJXmGG+obG1it0sYIbOIzcZ5Og3HE1qk41kyTcZRylKY8OkXnpBAGCj3e+zjoqkl3d64dsywtZBcg/Lmt3e+V1ONSAa0N9+9+GW2NWSS5iCxcVGxtgRlRl8XOONUFUP39SDjpSyLgTF30zNhk/jL8gmJ78GjAcUB4QoqG/C9kipOTaW33tzoFhMaKL9ScnuoWAtleqUlfWzEL5w/IbauAJTG3BYOYeY2NCynEgyuaiMq1WcMzeWwuUq2pbrsJdjdQkFbaY522zY4D2pL2ZLoGRbf19XD9YC3FKpT59jKilF5iKgxWuStgcY+B0jollLSuhZqldW62oiuGamUwUpiEBSyekDMRqxUQJnlHeCCaLDE/KJL31AtrIhvOAab95347L61uL0MRzjrNHeCs+6hsLRhWtTmAgdvwNHc+87GefKRAdjs6b2PZj5Zudk2yAg1UZn1H8julWMvXMmnnfvDYo8ue+xTeT9rfkeH8+6znLNucjbrpn/Juo7RP+bdPzmWRB+erKOX7kzaHLvVUAM/W0JiriqTabhvhQb+2rDvF37Sv1DieAOjHsA/WckwYClA8uYNaYOBHUC2cQCH+3vGA0z+n+BznuC731RLSH1LCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f2637eee47caee5051897652e36d43a0^sys_idNOT IN89e37a62470eee5051897652e36d43f3"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0de37a62470eee5051897652e36d43f2</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">f2637eee47caee5051897652e36d43a0</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:26:20</sys_created_on>
+        <sys_id>89e37a62470eee5051897652e36d43f3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:53</sys_updated_on>
+        <ui_id>5c0092c9-b861-4af8-9565-28c8e4d67d50</ui_id>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj/SfN0KDAV66Ap0RS9DYdASnQiVJU0fST3D/31U7GRDjzvZfCQf3xM5MBODjcG/mnvv5UGz/c/3BZM6YfQ/MA0dsj2TATvPFuwEKqZ4GIpmzTdQ7pYFis1yddfgEvIiX65WVXG3LRC2m3X2gtw44ceRWoX0VkH/9v8M/CiVcDiLtOBIW0DH9sOXVOgt1goaVDRoZqB+KSgsdqLdFfmOV+W6KvO83K5ISNUUpagAxZrqrp2Ps+kvb5DYKXQ3XvokFWW+YPgZUAukQS0ojwvWgRYQjOvZPrhIgEMQz1r1t4qj1IHoWKr99PI3cRd5ngpbJEccp+QtrOeHnGB+NJLjsw3S6AkJ0Ki5hxsVO/19kp9WgC1EFa4rICR64kObNCcVs6T2x9GcX64DH6S++JuTynBQtwhCcLKJAX1aAyrsiKjuwFqpD7V15iQvzaSlyw6KgqxV5kxD07llwJPwjJ4IsgfCv13gN3AyuXgiGmoeL+7rXzHNnXzMiuvJNBV47qQN90R3wlnc+J7udWLy02EI5NLTwNeEPV6vPCV6WrLk/0Jn4z6S1L/Y+AcKeSlcLwMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f2637eee47caee5051897652e36d43a0"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f2637eee47caee5051897652e36d43a0"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f2637eee47caee5051897652e36d43a0"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Flow to clean up pending approvals for inactive tasks over 6 months old</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>pending_approval_cleanup</internal_name>
+        <label_cache>[{"name":"1b6c7a29-1ed7-45be-a010-4431581ea876.Records","label":"1 - Look Up Records➛Approval Records","reference":"sysapproval_approver","reference_display":"Approval","type":"records","base_type":"records","usedInstances":{"5c0092c9-b861-4af8-9565-28c8e4d67d50":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"5c0092c9-b861-4af8-9565-28c8e4d67d50.item","label":"2 - For Each➛Approval Record","reference":"sysapproval_approver","reference_display":"Approval","type":"reference","base_type":"reference","usedInstances":{"44b52183-efbb-46ae-988b-bc51f50e2992":["record"],"97ab4756-e2c8-4265-b7f2-f3c490e29f92":["record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}}]</label_cache>
+        <master>true</master>
+        <name>Pending Approval Cleanup</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Pending Approval Cleanup">f2637eee47caee5051897652e36d43a0</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6bc472a6470eee5051897652e36d4385</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:54</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=6bc472a6470eee5051897652e36d4385"/>
+    <sys_variable_value action="delete_multiple" query="document_key=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=6bc472a6470eee5051897652e36d4385"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=6bc472a6470eee5051897652e36d4385^sys_idNOT IN27c472a6470eee5051897652e36d4386"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>6bc472a6470eee5051897652e36d4385</id>
+        <name>Pending Approval Cleanup</name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>27c472a6470eee5051897652e36d4386</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:19</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=27c472a6470eee5051897652e36d4386"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=6bc472a6470eee5051897652e36d4385^sys_idNOT IN23c472a6470eee5051897652e36d43a9"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">6bc472a6470eee5051897652e36d4385</flow>
+        <name>Repeat</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>23c472a6470eee5051897652e36d43a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:19</sys_updated_on>
+        <trigger_definition display_value="Repeat">f63f0d94c32222002841b63b12d3aeed</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/3VSXUvEMBD8K5Lns7TX86tvghz4oIKKLyJlm2zvApsP0/S0iv/dbdo7RLH0JTPZ2Zkhz5+CoEESlbhHjxDFQmgbMVigx8Ej4xvSCmvVB4jaWeYNWAXRhUFUMfS4EG1w5hGNJ4g80AJ1DLqgMIiqyPOF2AH1+DB014r1WMGCGZXDfmPiGSguzvLjvDgui6M8r9LPrNxqUgGtqJ5fFsJD4Ok4an/+ovQoX8iTdqUuVrJc8pfny/NV0ZyWTbFUJWBTsuCfxL/9xH+S/8yE7xGtQnUI/KeWgKDuLA2HG1tudirAwHunP3CWCtgih5A4kYdjrXTHpQ4TLLdOS7zzyUtCIjQ0z0hHvbG3Uw4+K2yhp/g0F8tI37EeB2TPo4vZUvuwdW/3+4VrbVPAmSQngQ4niDHopo/Yjc0joWGh2oD32m5qH9xOp2H2YrJUXdaSe+Olnd7YDORoPOOKIFszfpXgJwh6THHDMjz8ldLXr/24d8oxO66n0HxhLmWtkebn1MmgfbzkBbv9+/t6+QZ9DqNW2gIAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>repeat</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=6bc472a6470eee5051897652e36d4385^sys_idNOT IN2fc472a6470eee5051897652e36d438f,abc472a6470eee5051897652e36d438e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">6bc472a6470eee5051897652e36d4385</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>5c0092c9-b861-4af8-9565-28c8e4d67d50</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>2fc472a6470eee5051897652e36d438f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:19</sys_updated_on>
+        <ui_id>97ab4756-e2c8-4265-b7f2-f3c490e29f92</ui_id>
+        <values>H4sIAAAAAAAA/+VVTW/iMBD9K8hnQAkQNnCripBW6rZSu+LSraKJPSmWHCd1HFoW8d93kjiAoNulUi9ob8yX/d7kPfy4YVKwKRuh8PyJP+ZDfzgceN4gHPnxeBj7AzEERJ91mYYUqdMgz4ygeAWqrBKbTcA9bzLgk14cjv3eCJKwNwnGQW8Q8hBHYvxNBF5fWky3W5oTssgVrBdunDJ8KZUwqNn08anLcjB0k0XDppuj0rlQFcSoqPW+xXqM3a7zKhYZL1PUNpJt8sZNzlyl831GFRqq4Phel+GbRS2QgCSgCuyyFLQAm5k1m1pTUsIgiDut1ruOpdS2IZrCWyF/080jr+pLkJhxt4RdGLkFNelkBhYe6GRuS7PbVyY5Fs1OBCZQKnt9mGsa7nIrM92MWIhVO52pMtW3zUbY7oCD71EWBALzimeFvKGVPCyz1/sW5FzqeiWOoso4qF0E1hoZl7aCs2GosN5xCnku9XOUm2wl62GCkvafFQX9RGWvdGchn3UfeIW7T1uF/pzyszq9ACMrEj/oGBredlmxLq4VFMWeCu0weikrJA0xRyGqt1CvIKqVUA1zI3N7RVet0AHfdp0Z4uAjhfHJXlAHZ+4NQbgII7EEFTU/CO+J7q9cy6f1fwa6Vv8/66/+PlpngZPczeFs57YpOAMEX2aA8JIM4GhcvAP+pXtv8OE/64GSaqkXh5q3YPFX6XlDoTMbGXwppUFxKvu/N37OBWdgbV0wl6hE8Q741gKYEkKLUUPmyAau2Fm44u4t+MLHwLskN/w3z8HTH54ae9sdCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">6bc472a6470eee5051897652e36d4385</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>abc472a6470eee5051897652e36d438e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:54</sys_updated_on>
+        <ui_id>1b6c7a29-1ed7-45be-a010-4431581ea876</ui_id>
+        <values>H4sIAAAAAAAA/+VX30/bMBD+V6o8bVJUJaQU1jdEhYQEVALEy8YsJ3Fab64TbKelVP3fd/6RNGoDa6WigfZW35193919n+N+X3o09QbeadYLAhwen54EQRQFQb8fJTiM46ifxEHciz3f43hKIFLhmBFYzjAr9VouJC4KkcMa2R9EgDulsmB48eCizlwIeJIJZakg3Bt8f/S9Ags4V8GewXLDtSswhmPCIPTeIdsAqhZFvUTGZ21XzW2dG+vIRaqhBL5HnhXhKQEMGWaS+N4U8xSrXCxqiyA4HXG2NkwoV3Cip4OfJX2BvKeBjssIVJUQ66uXyDXJmrMhVvhOiTJRpXChySSnCZG2HynJcMnUedNmA0aFojm3W2zZdnfOyim/se3w6gOqmYCllACCFLpQjdyVkd1N8vlthfKCctMT52R5AmOsVlgpQeNSaTxLjzAyhYPQFIhA+RjpmVOzGbBMu2MGi27G8jkklXTMuzjRwLvQV9y9APvQmB+woLqKazjGkCmjDBiC7AhlXgrTyhlKWCmNQ2Au7VneyteUPGdYynXl0HL0VGrctg+uYmSbprckghbqDI6YEVfcyt9JG8fBmnJJzlOqUcimQBRW5PKG56ojyFNJAHHq179+NvRj2jEjP0rIkxoM2osS4BlEAljjSX7hGbZ4B2PZjcmYcg7dHmVXWKp+MMQL+eXrtgT/GY5DCt50uxL8ebPdbSNw0t+yXbUd4KQfHkz6UMdnEj8k/3ja31/NtgV/kXRy8ibJjtd8krlQyPayoeltde3N8x0gVDwfaWZ24sVrqBzNM0pY2vaFu9COjS/c0f/5hfuQJAdAKbLTo5xRbp4rAPS92B+8fcV+2+CZoVfje6ZtcPFvawB3VN552VsJO8CplHAHuTv3Fk8LxOq+N5TZvOsroxNAdDABREeHEcCyLrNuZEvPqxeqnmYV/6Lj8WY8ULCxIVy1CWyvnOG+OY9W2wKO9lJwk2zWM3yFcwd+yr6iSP89r4AJbHX5kNUvmtN0TNQ6exWV5mqO2e82v2McqgZlynuHZ3HvTdn2w7VEQSlIEAnDa76LQ3geBduXSBj41r7fJbIDmqoh1/i5c1vDacXoLhLQOhmb6TRvksva6mjeO+CT8cN+S0M3rVYVhm5mn+L/5OGk8PgHssk5vT8RAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6bc472a6470eee5051897652e36d4385^sys_idNOT IN23c472a6470eee5051897652e36d438d"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0de37a62470eee5051897652e36d43f2</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pending Approval Cleanup">6bc472a6470eee5051897652e36d4385</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_id>23c472a6470eee5051897652e36d438d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:54</sys_updated_on>
+        <ui_id>5c0092c9-b861-4af8-9565-28c8e4d67d50</ui_id>
+        <values>H4sIAAAAAAAA/51TTW+jMBD9Lz4TxEear1vVqlKl3a2UVr2sKjTYQ2KtsVnbJGUR/33HgdCqx55gnmfevPcwPTOtb1rvXsytc/Kg2e73W8SkDhi990xDjWzHpMfasYidQLWh7vu0XPE1ZNtFimK9WN6UuIAkTRbLZZ7ebFKEzXoV75EbK9ww0KiQrlHQvX6fgR+lEhYnkQ1Y0ubRsl3/5UgKWpBuRbVNky3Ps1WeJUm2WdLGvEwzkQOKFREqKFFR6+Pk7otZ3zWhtKOECfgxzexnlB5BRJZEDN89aoG0vgLlMGI1aAHe2I7tvG0JsAjiSatu7jhK7YmOhd53J//RxjRJQmOFZIjjeDiXxZTjCFf34OGZqLlv7dTKj0ZydGMUAitolb/7jI0NT42XRo8jHkp1nTaqrfWvMQk2E1w/GyGtIxHYBKNB+uSjej6a8/6q8kHqSyjToTIc1FyB91aWrQ96eoYKayIqamgaqQ9FY81JXoZJSx0fFBVxpcyZloYrGgMPwmPKFeIHwu8v8CtYGVz8JBoaHiLmOnenwLkPLxRi8bcNSkZnk4dijCGMcCsbf0sLTjjJHd7CrR+550y5dCThJWCP138lHHR0gyT/DJ2N/RPEf2DDf0f+wwB1AwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=6bc472a6470eee5051897652e36d4385"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_6bc472a6470eee5051897652e36d4385"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_6bc472a6470eee5051897652e36d4385"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>f2637eee47caee5051897652e36d43a0</sys_id>
+        <latest_snapshot>6bc472a6470eee5051897652e36d4385</latest_snapshot>
+        <compiler_build/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f2637eee47caee5051897652e36d43a0^sys_idNOT IN6fc472a6470eee5051897652e36d43d6"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan/>
+        <plan_id>f2637eee47caee5051897652e36d43a0</plan_id>
+        <snapshot>6bc472a6470eee5051897652e36d4385</snapshot>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-13 14:30:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6fc472a6470eee5051897652e36d43d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-13 14:30:19</sys_updated_on>
+        <trigger display_value="">2fc472a6470eee5051897652e36d43d3</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f2637eee47caee5051897652e36d43a0"/>
+</record_update>
