@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description>This fix script supports the instance scan check "User Account with both snc_internal and snc_external Roles" by removing any role assignment for snc_internal/external where it is not inherited from a group. </description>
+        <name>Cleanup direct assigned snc roles</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var userGr = new GlideRecord('sys_user_has_role');
+userGr.addEncodedQuery('inherited=false^roleIN940ba702933002009c8579b4f47ffbe2,7fcaa702933002009c8579b4f47ffbde^user.company=2d0bbc2587f4a9500303f659dabb35e6^user.internal_integration_user=false^user.web_service_access_only=false');
+userGr.query();
+userGr.deleteMultiple();]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-23 18:54:25</sys_created_on>
+        <sys_id>3dc0df314712629451897652e36d4327</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Cleanup direct assigned snc roles</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>sys_script_fix_3dc0df314712629451897652e36d4327</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-23 19:17:50</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>3dc0df314712629451897652e36d4327</id>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-06-23 18:54:25</sys_created_on>
+        <sys_id>ed215f314712629451897652e36d43d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-23 18:54:25</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
