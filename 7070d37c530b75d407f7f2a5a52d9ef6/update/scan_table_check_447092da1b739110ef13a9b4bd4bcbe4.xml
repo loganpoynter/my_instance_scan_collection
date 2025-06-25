@@ -33,6 +33,10 @@ This scan finds all users which have licensed roles that have been assigned to t
 	if (grLicenseRole.next()) {
 		if (!grLicenseRole.license_role_type.nil() && grLicenseRole.license_role_type.id !== 'requester') {
 			engine.finding.setCurrentSource(engine.current.user.getRefRecord());
+			engine.finding.setValue(
+				'finding_details',
+				grLicenseRole.getValue('name')
+			);
 			engine.finding.increment();
 		}
 	}
@@ -43,16 +47,15 @@ This scan finds all users which have licensed roles that have been assigned to t
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-12-18 12:25:42</sys_created_on>
         <sys_id>447092da1b739110ef13a9b4bd4bcbe4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>User with direct Assignments of licensable Roles</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_table_check_447092da1b739110ef13a9b4bd4bcbe4</sys_update_name>
-        <sys_updated_by>maik.skoddow</sys_updated_by>
-        <sys_updated_on>2024-01-14 11:47:33</sys_updated_on>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-06-25 16:21:45</sys_updated_on>
         <table>sys_user_has_role</table>
         <use_manifest>false</use_manifest>
     </scan_table_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=447092da1b739110ef13a9b4bd4bcbe4"/>
 </record_update>
