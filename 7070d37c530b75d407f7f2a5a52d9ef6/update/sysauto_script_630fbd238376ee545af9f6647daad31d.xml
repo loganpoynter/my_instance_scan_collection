@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <max_drift/>
+        <name>Ignore Retrieved Update Sets</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Logan Poynter">257642b0c3b54ad00bd9d9ec050131fc</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-15 00:00:00</run_period>
+        <run_start>2025-07-24 06:00:00</run_start>
+        <run_time>1970-01-01 05:00:00</run_time>
+        <run_type>periodically</run_type>
+        <script><![CDATA[/*
+ * This scheduled script runs every two weeks following a release to set updates set to ignore that have a remote * sys_id (retrieved). See the following community article for more details: https://www.servicenow.com/community/* servicenow-ai-platform-articles/why-you-should-set-your-completed-update-sets-to-ignore-on/ta-p/2306744
+ */
+var localSetGR = new GlideRecord('sys_update_set');
+localSetGR.addQuery('state', '!=', 'ignore');
+localSetGR.addNotNullQuery('remote_sys_id');
+localSetGR.orderBy('application');
+localSetGR.query();
+while (localSetGR.next()) {
+    var currentScope = gs.getCurrentApplicationId();
+    var updateSetScope = localSetGR.getValue('application');
+    if (currentScope != updateSetScope) {
+        gs.setCurrentApplicationId(updateSetScope);
+    }
+
+    localSetGR.setValue('state', 'ignore');
+    localSetGR.update();
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
+        <sys_created_on>2025-07-23 19:58:18</sys_created_on>
+        <sys_id>630fbd238376ee545af9f6647daad31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ignore Retrieved Update Sets</sys_name>
+        <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
+        <sys_update_name>sysauto_script_630fbd238376ee545af9f6647daad31d</sys_update_name>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-07-23 19:58:18</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
