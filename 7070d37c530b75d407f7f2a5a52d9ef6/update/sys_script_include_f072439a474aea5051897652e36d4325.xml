@@ -23,7 +23,6 @@ MJR_InstanceScanHelperUtils.prototype = Object.extendsObject(global.AbstractAjax
         var scanFindingsGr = new GlideRecord("scan_finding");
         scanFindingsGr.addEncodedQuery('check=f9aa5f3193bd86107ab2f55f7bba1080^sys_created_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()');
         scanFindingsGr.query();
-		gs.info("Found {0} findings for orphaned attachments...validating", scanFindingsGr.getRowCount());
         while (scanFindingsGr.next()) {
             var attachmentGr = new GlideRecord('sys_attachment');
             if (attachmentGr.get(scanFindingsGr.source)) {
@@ -36,7 +35,7 @@ MJR_InstanceScanHelperUtils.prototype = Object.extendsObject(global.AbstractAjax
                     var _tblGr = new GlideRecord(tblName);
                     if (!_tblGr.get(tblSysId)) {
                         gs.info('Deleting orphaned attachment: ' + attachmentGr.getValue('sys_id'));
-                        //attachmentGr.deleteRecord();
+                        attachmentGr.deleteRecord();
                     }
                 } else {
                     gs.error('Table ' + tblName + ' for attachment ' + attachmentGr.getUniqueValue() + ' does not exist!');
@@ -50,14 +49,14 @@ MJR_InstanceScanHelperUtils.prototype = Object.extendsObject(global.AbstractAjax
         <sys_created_by>Logan.Poynter@meijer.com</sys_created_by>
         <sys_created_on>2025-06-12 20:52:19</sys_created_on>
         <sys_id>f072439a474aea5051897652e36d4325</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>MJR_InstanceScanHelperUtils</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>sys_script_include_f072439a474aea5051897652e36d4325</sys_update_name>
         <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
-        <sys_updated_on>2025-07-24 12:38:12</sys_updated_on>
+        <sys_updated_on>2025-07-24 13:16:18</sys_updated_on>
     </sys_script_include>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>f072439a474aea5051897652e36d4325</id>
