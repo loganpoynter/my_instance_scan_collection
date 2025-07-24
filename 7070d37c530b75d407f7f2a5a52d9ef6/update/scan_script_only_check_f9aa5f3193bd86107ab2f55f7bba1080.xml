@@ -60,7 +60,7 @@
 				_objEval.putVariable('result', null);
 				_objEval.evaluateScript(_grScriptInclude, 'script');
 
-				if (!_objEval.getVariable('result')) {
+				if (_objEval.getVariable('result') === false) {
 					engine.finding.setCurrentSource(_grAttachment);
 					engine.finding.increment();
 					engine.finding.setValue(
@@ -80,6 +80,7 @@
 			
 		}
 	}	
+	//gs.eventQueue('orphaned_attachments_cleanup');
 		
 
 })(engine);]]></script>
@@ -88,13 +89,13 @@
         <sys_created_by>maik.skoddow</sys_created_by>
         <sys_created_on>2024-04-27 07:06:35</sys_created_on>
         <sys_id>f9aa5f3193bd86107ab2f55f7bba1080</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Orphaned Attachments</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_script_only_check_f9aa5f3193bd86107ab2f55f7bba1080</sys_update_name>
         <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
-        <sys_updated_on>2025-06-12 17:03:26</sys_updated_on>
+        <sys_updated_on>2025-07-24 12:49:51</sys_updated_on>
     </scan_script_only_check>
 </record_update>
