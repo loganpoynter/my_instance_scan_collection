@@ -14,74 +14,93 @@ For client side scripts, you can either access the URL via scractpad from server
         <score_min>0</score_min>
         <score_scale>1</score_scale>
         <script><![CDATA[(function(engine) {
-	
-	//only include customized artifacts as we cannot take care of OOTB artifacts
-	var _grArtifact = new GlideRecord('sys_metadata');
 
-	_grArtifact.addQuery('sys_id', engine.current.getUniqueValue());
-	_grArtifact.setLimit(1);
-	_grArtifact.query();
+    //only include customized artifacts as we cannot take care of OOTB artifacts
+    var _grArtifact = new GlideRecord('sys_metadata');
 
-	if (new global.UpdateVersionAPI().getCustomerFileIds(_grArtifact).length == 0) {
-		return;
-	}
+    _grArtifact.addQuery('sys_id', engine.current.getUniqueValue());
+    _grArtifact.setLimit(1);
+    _grArtifact.query();
+
+    if (new global.UpdateVersionAPI().getCustomerFileIds(_grArtifact).length == 0) {
+        return;
+    }
 
 
-	//don't continue if current table is on the exclusion list
-	var _strPropertyName     = 'my_instance_scan_collection.table_exclusion_list';
-	var _strExcludedTables   = String(gs.getProperty(_strPropertyName, '')).trim();
+    //don't continue if current table is on the exclusion list
+    var _strPropertyName = 'my_instance_scan_collection.table_exclusion_list';
+    var _strExcludedTables = String(gs.getProperty(_strPropertyName, '')).trim();
 
-	if (_strExcludedTables.length > 0) {
-		var _arrExcludedTables      = _strExcludedTables.split(',');
-		var _arrFinalExcludedTables = [];
+    if (_strExcludedTables.length > 0) {
+        var _arrExcludedTables = _strExcludedTables.split(',');
+        var _arrFinalExcludedTables = [];
 
-		for (var _numIndex = 0; _numIndex < _arrExcludedTables.length; _numIndex++) {
-			var _strExcludedTableName = _arrExcludedTables[_numIndex].trim();
+        for (var _numIndex = 0; _numIndex < _arrExcludedTables.length; _numIndex++) {
+            var _strExcludedTableName = _arrExcludedTables[_numIndex].trim();
 
-			if (_strExcludedTableName.length > 0) {
-				if (gs.tableExists(_strExcludedTableName)) {
-					_arrFinalExcludedTables.push(_strExcludedTableName);
-				}
-			}				
-		}
+            if (_strExcludedTableName.length > 0) {
+                if (gs.tableExists(_strExcludedTableName)) {
+                    _arrFinalExcludedTables.push(_strExcludedTableName);
+                }
+            }
+        }
 
-		if (_arrFinalExcludedTables.length > 0) {
-			if (_arrFinalExcludedTables.indexOf(engine.current.getTableName()) !== -1) {
-				return;
-			}
-		}		
-	}
-	
+        if (_arrFinalExcludedTables.length > 0) {
+            if (_arrFinalExcludedTables.indexOf(engine.current.getTableName()) !== -1) {
+                return;
+            }
+        }
+    }
 
-    var _strInstanceName = String(gs.getProperty('instance_name', '')).trim();
-	
+
+    var _strInstanceNameProd = String("meijer.service-now.com");
+    var _strInstanceNameTest = String("meijertest.service-now.com");
+    var _strInstanceNameDev = String("meijerdev.service-now.com");
+
     engine.rootNode.visit(function(node) {
         if (node.getTypeName() === "STRING") {
             //For any string variables or method arguments
             var _strText = node.toSource();
-			
-            if (_strText.indexOf(_strInstanceName) > -1) {
+
+            if (_strText.indexOf(_strInstanceNameProd) > -1) {
                 engine.finding.incrementWithNode(node);
-			}
-        } 
+                engine.finding.setValue(
+                    'finding_details',
+                    _strInstanceNameProd
+                );
+            }
+            if (_strText.indexOf(_strInstanceNameTest) > -1) {
+                engine.finding.incrementWithNode(node);
+                engine.finding.setValue(
+                    'finding_details',
+                    _strInstanceNameTest
+                );
+            }
+            if (_strText.indexOf(_strInstanceNameDev) > -1) {
+                engine.finding.incrementWithNode(node);
+                engine.finding.setValue(
+                    'finding_details',
+                    _strInstanceNameDev
+                );
+            }
+        }
     });
-	
+
 })(engine);]]></script>
         <short_description>Usage of hard coded Instance URLs</short_description>
         <sys_class_name>scan_linter_check</sys_class_name>
         <sys_created_by>maik.skoddow</sys_created_by>
         <sys_created_on>2021-11-07 14:01:46</sys_created_on>
         <sys_id>a935b3af1be3f010ef13a9b4bd4bcbd0</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Usage of hard coded Instance URLs</sys_name>
         <sys_package display_value="My Instance Scan Collection" source="7070d37c530b75d407f7f2a5a52d9ef6">7070d37c530b75d407f7f2a5a52d9ef6</sys_package>
         <sys_policy/>
         <sys_scope display_value="My Instance Scan Collection">7070d37c530b75d407f7f2a5a52d9ef6</sys_scope>
         <sys_update_name>scan_linter_check_a935b3af1be3f010ef13a9b4bd4bcbd0</sys_update_name>
-        <sys_updated_by>maik.skoddow</sys_updated_by>
-        <sys_updated_on>2025-02-22 02:51:46</sys_updated_on>
+        <sys_updated_by>Logan.Poynter@meijer.com</sys_updated_by>
+        <sys_updated_on>2025-08-28 14:23:47</sys_updated_on>
     </scan_linter_check>
-    <sys_translated_text action="delete_multiple" query="documentkey=a935b3af1be3f010ef13a9b4bd4bcbd0"/>
     <sys_es_latest_script action="INSERT_OR_UPDATE">
         <id>a935b3af1be3f010ef13a9b4bd4bcbd0</id>
         <sys_created_by>maik.skoddow</sys_created_by>
